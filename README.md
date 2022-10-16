@@ -8,7 +8,7 @@ An intiutive interface for your requests in seconds
 
 ***
 
-**Radial abstracts painful low-levels request handling and presents a simple and intiutive interface to handle requests for your application.**
+**Radial abstracts painful low-level request handling and presents a simple and intiutive interface to handle requests for your application.**
 
 ## Example
 ```py
