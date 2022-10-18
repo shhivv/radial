@@ -8,11 +8,7 @@ The next-gen HTTP client library for Python
 
 ***
 
-<<<<<<< HEAD
 **Radial abstracts painful low-levels request handling and presents a simple and intiutive interface to perform API requests in your application.**
-=======
-**Radial abstracts painful low-level request handling and presents a simple and intiutive interface to handle requests for your application.**
->>>>>>> 5f8d90e1887f6f81dabf4d56e14b8abf42c5cfda
 
 ## Installation
 
