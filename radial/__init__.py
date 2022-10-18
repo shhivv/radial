@@ -1,5 +1,5 @@
 __title__ = "Radial"
-__description__ = "An intiutive interface for your requests in seconds"
+__description__ = "The next-gen HTTP client library for Python"
 __version__ = "0.1.0"
 __author__ = "Shiv"
 __license__ = "MIT"

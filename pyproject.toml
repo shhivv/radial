@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "radial"
 version = "0.1.0"
-description = "An intiutive interface for your requests in seconds"
+description = "The next-gen HTTP client library for Python"
 authors = ["Shiv <hello@shivs.me>"]
 readme = "README.md"
 

@@ -1,15 +1,26 @@
 <br>
 <h1 align="center">
-💫 Radial
+🚀 Radial
 </h1>
 <p align="center">
-An intiutive interface for your requests in seconds
+The next-gen HTTP client library for Python
 </p>
 
 ***
 
-**Radial abstracts painful low-levels request handling and presents a simple and intiutive interface to handle requests for your application.**
+**Radial abstracts painful low-levels request handling and presents a simple and intiutive interface to perform API requests in your application.**
 
+## Installation
+
+**Stable**
+```
+$ pip install radial
+```
+
+**Development**
+```
+$ pip install https://github.com/shhivv/radial.git@master
+```
 ## Example
 ```py
 @radial("https://dog.ceo/api")
