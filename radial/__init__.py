@@ -33,5 +33,10 @@ def _request_builder(method):
     return request
 
 
-get = _request_builder("get")
-post = _request_builder("post")
+get = _request_builder("GET")
+options = _request_builder("OPTIONS")
+head = _request_builder("HEAD")
+post = _request_builder("POST")
+put = _request_builder("PUT")
+patch = _request_builder("PATCH")
+delete = _request_builder("DELETE")
