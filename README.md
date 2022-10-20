@@ -3,7 +3,7 @@
 🚀 Radial
 </h1>
 
-<div align="centeR">
+<div align="center">
 <strong>The next-gen HTTP client library for Python</strong>
 
 Radial abstracts painful low-level request handling and presents a simple and intiutive interface to perform API requests in your application.
