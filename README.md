@@ -5,6 +5,7 @@
 
 <div align="center">
 <strong>The next-gen HTTP client library for Python</strong>
+
 <br>
 Radial abstracts painful low-level request handling and presents a simple and intiutive interface to perform API requests in your application.
 </div>
