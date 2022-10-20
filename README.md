@@ -6,11 +6,12 @@
 <div align="center">
 <strong>The next-gen HTTP client library for Python</strong>
 
-<br>
+***
+<p>
 Radial abstracts painful low-level request handling and presents a simple and intiutive interface to perform API requests in your application.
+<p>
 </div>
 
-***
 <br>
 
 With **Radial**, old & ugly code that looked like this
