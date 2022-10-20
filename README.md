@@ -5,7 +5,7 @@
 
 <div align="center">
 <strong>The next-gen HTTP client library for Python</strong>
-
+<br>
 Radial abstracts painful low-level request handling and presents a simple and intiutive interface to perform API requests in your application.
 </div>
 
@@ -22,7 +22,7 @@ def fetch_image():
         return res["url"]
     raise Exception("Request did not return a 2xx")
 ``` 
-becomes beautiful without compromising on any key feature
+becomes beautiful without losing any key features
 ```py
 import radial
 

@@ -21,7 +21,7 @@ With **Radial**, old & ugly code that looked like this
             return res["url"]
         raise Exception("Request did not return a 2xx")
 
-becomes beautiful without compromising on any key feature
+becomes beautiful without losing any key features
 
 .. code-block:: python3
 
