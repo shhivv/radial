@@ -2,36 +2,46 @@
 <h1 align="center">
 🚀 Radial
 </h1>
-<p align="center">
-The next-gen HTTP client library for Python
-</p>
+
+<div align="centeR">
+<strong>The next-gen HTTP client library for Python</strong>
+
+Radial abstracts painful low-level request handling and presents a simple and intiutive interface to perform API requests in your application.
+</div>
 
 ***
+<br>
 
-**Radial abstracts painful low-levels request handling and presents a simple and intiutive interface to perform API requests in your application.**
+With **Radial**, old & ugly code that looked like this
+```py
+import request_library
 
+def fetch_image():
+    res = request_library.get("https://example.com/image")
+    if res.status == 200):
+        return res["url"]
+    raise Exception("Request did not return a 2xx")
+``` 
+becomes beautiful without compromising on any key feature
+```py
+import radial
+
+@radial("https://example.com")
+class Example:
+    @get("/image", raise_on_error=True)
+    def fetch_image(self, res):
+        return res["url"] 
+```
 ## Installation
 
 **Stable**
 ```
-$ pip install radial
+$ python -m pip install radial 
 ```
 
 **Development**
 ```
-$ pip install https://github.com/shhivv/radial.git@master
-```
-## Example
-```py
-@radial("https://dog.ceo/api")
-class Dog:
-    @get("/breeds/image/random")
-    def random(self, response):
-        return response.json()
-
-dog = Dog()
-random = dog.random()
-print(random)
+$ python -m pip install https://github.com/shhivv/radial.git@master
 ```
 
-Currently work in progress
+## [Documentation and API reference](https://radialhttp.readthedocs.io/en/latest/)
