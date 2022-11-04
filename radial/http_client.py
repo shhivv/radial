@@ -15,6 +15,7 @@ class HTTP:
     def __init__(self, url: str, **config) -> None:
         self.route = Route(url)
         self.config = config
+        
         self.sync_client = None
         self.aio_client = None
 
