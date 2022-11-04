@@ -8,7 +8,7 @@
 
 ***
 <p>
-Radial abstracts painful low-level request handling and presents a simple and intiutive interface to perform API requests in your application.
+Radial abstracts painful low-level request handling and presents a simple and intuitive interface to perform API requests in your application.
 <p>
 </div>
 
