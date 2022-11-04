@@ -7,8 +7,8 @@ class Dog:
     def random(self, response):
         return response.json()
 
-    def fetch_breed(self, breed):
-        return self._http.get(f"/breed/{breed}/images").json()
+    def fetch_breed_random(self, breed):
+        return self._http.get(f"/breed/{breed}/images/random").json() #type: ignore
 
 
 def test_simple():
@@ -19,5 +19,5 @@ def test_simple():
 
 def test_manual():
     dog = Dog()
-    hounds = dog.fetch_breed("hound")
+    hounds = dog.fetch_breed_random("hound")
     assert hounds["status"] == "success"

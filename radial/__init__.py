@@ -5,7 +5,7 @@ __author__ = "Shiv"
 __license__ = "MIT"
 
 from .http_client import HTTP
-
+import typing
 
 def radial(url, **config):
     def inner(cls):

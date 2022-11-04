@@ -1,6 +1,7 @@
 from typing import Any, Mapping
 from urllib.parse import urlencode
 import requests
+import aiohttp
 
 
 class Route:
@@ -15,6 +16,7 @@ class HTTP:
     def __init__(self, url: str, **config) -> None:
         self.route = Route(url)
         self.config = config
+        self.aio_client = None
 
     def get(self, *args, **kwargs):
         return self._request("GET", *args, **kwargs)
@@ -37,8 +39,30 @@ class HTTP:
     def delete(self, *args, **kwargs):
         return self._request("DELETE", *args, **kwargs)
 
+    async def aio_get(self, *args, **kwargs):
+        return await self._arequest("GET", *args, **kwargs)
+
+    async def aio_options(self, *args, **kwargs):
+        return await self._arequest("OPTIONS", *args, **kwargs)
+
+    async def aio_head(self, *args, **kwargs):
+        return await self._arequest("HEAD", *args, **kwargs)
+
+    async def aio_post(self, *args, **kwargs):
+        return await self._arequest("POST", *args, **kwargs)
+
+    async def aio_put(self, *args, **kwargs):
+        return await self._arequest("PUT", *args, **kwargs)
+
+    async def aio_patch(self, *args, **kwargs):
+        return await self._arequest("PATCH", *args, **kwargs)
+
+    async def aio_delete(self, *args, **kwargs):
+        return await self._arequest("DELETE", *args, **kwargs)
+
     def _request(self, method, endpoint, params={}, headers={}):
         gheaders = self.config.get("headers", {})
+
         res = requests.request(
             method,
             self.route.create(endpoint=endpoint, params=params),
@@ -46,3 +70,16 @@ class HTTP:
         )
 
         return res
+
+    async def _arequest(self, method, endpoint, params={}, headers={}):
+        gheaders = self.config.get("headers", {})
+
+        if not self.aio_client:
+            self.aio_client = aiohttp.ClientSession()
+
+        async with self.aio_client as client:
+            return await client.request(
+                method,
+                self.route.create(endpoint=endpoint, params=params),
+                headers={**headers, **gheaders},
+            )
