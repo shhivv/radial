@@ -12,4 +12,4 @@ jobs:
     - name: Checkout Actions Repository
       uses: actions/checkout@v3
     - name: Spell Check Repo
-      uses: crate-ci/typos@1.0.4
+      uses: crate-ci/typos@v1.0.4
