@@ -7,6 +7,7 @@ __license__ = "MIT"
 from .http_client import HTTP
 import typing
 
+
 def radial(url, **config):
     def inner(cls):
         class Wrapped(cls):

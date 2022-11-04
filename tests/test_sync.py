@@ -8,7 +8,7 @@ class Dog:
         return response.json()
 
     def fetch_breed_random(self, breed):
-        return self._http.get(f"/breed/{breed}/images/random").json() #type: ignore
+        return self._http.get(f"/breed/{breed}/images/random").json()  # type: ignore
 
 
 def test_simple():

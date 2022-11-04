@@ -1,7 +1,6 @@
 from typing import Any, Mapping
 from urllib.parse import urlencode
-import requests
-import aiohttp
+import httpx
 
 
 class Route:
@@ -16,6 +15,7 @@ class HTTP:
     def __init__(self, url: str, **config) -> None:
         self.route = Route(url)
         self.config = config
+        self.sync_client = None
         self.aio_client = None
 
     def get(self, *args, **kwargs):
@@ -63,7 +63,10 @@ class HTTP:
     def _request(self, method, endpoint, params={}, headers={}):
         gheaders = self.config.get("headers", {})
 
-        res = requests.request(
+        if not self.sync_client:
+            self.sync_client = httpx.Client()
+
+        res = self.sync_client.request(
             method,
             self.route.create(endpoint=endpoint, params=params),
             headers={**gheaders, **headers},
@@ -75,7 +78,7 @@ class HTTP:
         gheaders = self.config.get("headers", {})
 
         if not self.aio_client:
-            self.aio_client = aiohttp.ClientSession()
+            self.aio_client = httpx.AsyncClient()
 
         async with self.aio_client as client:
             return await client.request(
